@@ -1,10 +1,10 @@
-var paper = 'papier'
-var rock = 'kamień'
-var scissors = 'nożyce'
-var computerMove;
-var playerMove, playerInput;
-var randomNumber;
-var argButtonName, buttonRock, buttonPaper, buttonScissors;
+const paper = 'papier'
+const rock = 'kamień'
+const scissors = 'nożyce'
+let computerMove;
+let playerMove, playerInput;
+let randomNumber;
+let argButtonName, buttonRock, buttonPaper, buttonScissors;
 
 function printMessage(msg) {
     var div = document.createElement('div');
