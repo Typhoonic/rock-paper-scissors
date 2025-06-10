@@ -1,20 +1,10 @@
 const paper = 'papier'
 const rock = 'kamień'
 const scissors = 'nożyce'
-let computerMove;
-let playerMove, playerInput;
+
+let playerInput;
 let randomNumber;
 let argButtonName, buttonRock, buttonPaper, buttonScissors;
-
-function printMessage(msg) {
-    var div = document.createElement('div');
-    div.innerHTML = msg;
-    document.getElementById('messages').appendChild(div);
-}
-
-function clearMessages() {
-    document.getElementById('messages').innerHTML = '';
-}
 
 function setMoveByNumber(number) {
     if (number == 1) {
@@ -41,9 +31,8 @@ function displayResult(argPlayerMove, argComputerMove) {
 function buttonClicked(argButtonName) {
     clearMessages()
     randomNumber = Math.floor(Math.random() * 3 + 1);
-    computerMove = setMoveByNumber(randomNumber)
-
-    playerMove = argButtonName;
+    const computerMove = setMoveByNumber(randomNumber)
+    const playerMove = argButtonName;
 
     displayResult(playerMove, computerMove);
     console.log(argButtonName + ' został kliknięty');
@@ -53,6 +42,6 @@ buttonRock = document.getElementById('button-rock');
 buttonPaper = document.getElementById('button-paper');
 buttonScissors = document.getElementById('button-scissors');
 
-buttonRock.addEventListener('click', function () { buttonClicked(rock, computerMove); });
-buttonPaper.addEventListener('click', function () { buttonClicked(paper, computerMove); });
-buttonScissors.addEventListener('click', function () { buttonClicked(scissors, computerMove); });
+buttonRock.addEventListener('click', function () { buttonClicked(rock); });
+buttonPaper.addEventListener('click', function () { buttonClicked(paper); });
+buttonScissors.addEventListener('click', function () { buttonClicked(scissors); });
